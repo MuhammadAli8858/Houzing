@@ -19,4 +19,20 @@ export const navbar = [
     private: false,
     hidden: false,
   },
+  {
+    id: useId,
+    element: <h1>Generic Sing In</h1>,
+    title: "Sing In",
+    path: "/singin",
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useId,
+    element: <h1>Generic Sing Up</h1>,
+    title: "Sing Up",
+    path: "/singup",
+    private: false,
+    hidden: true,
+  },
 ];
