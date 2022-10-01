@@ -20,3 +20,13 @@ Icons.Filter = styled(filter)`
 Icons.Houses = styled(houses)`
   margin-right: 8px;
 `;
+export const MenuWrapper = styled.div`
+  padding: 30px;
+  background: white;
+  border: 1px solid #e6e9ec;
+`;
+export const Section = styled.div`
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+`;

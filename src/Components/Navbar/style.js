@@ -11,7 +11,6 @@ export const Container = styled.div`
 export const Main = styled.div`
   display: flex;
   justify-content: center;
-  /* width: 100%; */
   background: var(--colorPrimary);
 `;
 export const Wrapper = styled.div`
@@ -23,7 +22,6 @@ export const Wrapper = styled.div`
   height: 64px;
   font-size: 16px;
   width: 100%;
-  /* max-width: 1440px; */
 `;
 
 export const Section = styled.div`
