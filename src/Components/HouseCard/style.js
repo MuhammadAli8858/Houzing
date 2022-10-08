@@ -9,7 +9,7 @@ import { ReactComponent as resize } from "../../assets/icons/resize.svg";
 export const Container = styled.div`
   position: absolute;
   width: 380px;
-  height: 829px; // 429px
+  height: 429px;
 
   filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
     drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
@@ -61,7 +61,7 @@ Icons.Love = styled(love)`
   border-radius: 50%;
   margin-left: 20px;
   cursor: pointer;
-  :active{
+  :active {
     transform: scale(0.9);
   }
 `;
