@@ -7,7 +7,6 @@ import { ReactComponent as love } from "../../assets/icons/love.svg";
 import { ReactComponent as resize } from "../../assets/icons/resize.svg";
 
 export const Container = styled.div`
-  position: absolute;
   width: 380px;
   height: 429px;
 
@@ -15,12 +14,12 @@ export const Container = styled.div`
     drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
     drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
 
-  margin: 100px;
 `;
 
 export const Img = styled.img`
   width: 100%;
   max-height: 220px;
+  min-height: 220px;
 `;
 
 export const Content = styled.div`
