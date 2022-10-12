@@ -22,6 +22,8 @@ export const Wrapper = styled.div`
   height: 64px;
   font-size: 16px;
   width: 100%;
+
+  max-width: 1440px;
 `;
 
 export const Section = styled.div`

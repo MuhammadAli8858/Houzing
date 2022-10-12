@@ -3,7 +3,6 @@ import { Container, Content, Details, Divider, Icons, Img } from "./style.js";
 import noimg from "../../assets/img/noimg1.jpg";
 
 const HouseCard = ({ data = {} }) => {
-  console.log(data);
   const {
     attachments,
     salePrice,
