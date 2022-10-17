@@ -5,7 +5,6 @@ import { ReactComponent as logoImg } from "../../assets/icons/logo.svg";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
 `;
 
 export const Main = styled.div`

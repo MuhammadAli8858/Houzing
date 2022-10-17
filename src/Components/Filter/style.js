@@ -12,6 +12,8 @@ export const Container = styled.div`
 
   width: 100%;
   max-width: 1440px;
+
+  margin: auto;
 `;
 export const Icons = styled.div``;
 Icons.Search = styled(search)`
