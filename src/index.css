@@ -64,3 +64,18 @@ body{
   overflow: hidden;
   white-space: nowrap;
 }
+
+/* Slick Category */
+
+.slick-prev::before,
+.slick-next::before{
+  display: flex !important;
+  color: black !important;
+  font-size: 50px  !important;
+  margin: 10px 20px  !important;
+  line-height: 0 !important;
+}
+
+.slick-prev {
+  left: -100px !important ;
+}

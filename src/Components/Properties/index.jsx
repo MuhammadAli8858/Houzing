@@ -16,6 +16,7 @@ const Properties = (props) => {
         setData(res?.data || []);
       });
   }, [search]);
+
   return (
     <Container>
       {data.map((value) => {
