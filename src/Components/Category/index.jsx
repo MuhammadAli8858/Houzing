@@ -1,6 +1,5 @@
-import { Carousel } from "antd";
-import React, { useEffect, useRef, useState } from "react";
-import { Arrow, Blur, Container, Content, Img } from "./style";
+import React, { useEffect, useState } from "react";
+import { Container } from "./style";
 import CategoryCard from "../CategoryCard";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
@@ -23,6 +22,7 @@ const settings = {
 export const GenCarousel = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
+
   useEffect(() => {
     fetch(`${url}/categories/list`)
       .then((res) => res.json())
@@ -38,7 +38,7 @@ export const GenCarousel = () => {
         {data.map((value) => {
           return (
             <CategoryCard
-              onClick={() => navigate(`/properties?category=${value?.name}`)}
+              onClick={() => navigate(`/properties?category_id=${value?.id}`)}
               data={value}
             />
           );

@@ -24,7 +24,7 @@ const HouseCard = ({ data = {} }) => {
         <div id="info">
           {" "}
           {address || "Quincy St, Brooklyn, NY, USA"}-{" "}
-          {category?.name || "Category"}
+          {category?.name || "Category"} {houseDetails?.room || 0}-rooms
         </div>
         <Details>
           <Details.Item>
