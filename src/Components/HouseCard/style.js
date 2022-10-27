@@ -6,15 +6,27 @@ import { ReactComponent as ruler } from "../../assets/icons/ruler.svg";
 import { ReactComponent as love } from "../../assets/icons/love.svg";
 import { ReactComponent as resize } from "../../assets/icons/resize.svg";
 
+export const Global = styled.div`
+  display: flex;
+`;
+
 export const Container = styled.div`
   width: 100%;
   max-width: 380px;
   min-width: 330px;
   height: 430px;
+  margin: ${({ gap }) => {
+    return gap && `0 ${gap}px`;
+  }};
+  background: white;
+  border: 1px solid #e6e9ec;
 
-  filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
-    drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
-    drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
+  :hover {
+    filter: drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
+      drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
+      drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
+  }
+  cursor: pointer;
 `;
 
 export const Img = styled.img`

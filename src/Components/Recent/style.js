@@ -5,8 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   position: relative;
   margin: auto;
-  position: relative;
-  padding: 96px 130px;
+  padding: 0px 130px;
   max-width: 1440px;
   width: 100%;
 `;
@@ -15,7 +14,6 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  text-align: center;
+  margin-top: 96px;
   margin-bottom: 32px;
 `;
