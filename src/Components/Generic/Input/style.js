@@ -41,9 +41,11 @@ export const Container = styled.input`
   width: ${({ width }) => (width ? `${width}px` : "100%")};
   outline: none;
   border: 1px solid #e6e9ec;
-  cursor: pointer;
   padding-left: ${({ icon }) => (icon ? "35px" : "20px")};
   /* ${getType}; */
+  :focus {
+    border: 1px solid #0061df;
+  }
   :active {
     opacity: 0.7;
   }

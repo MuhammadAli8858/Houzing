@@ -5,7 +5,6 @@ import { ReactComponent as logoImg } from "../../assets/icons/logo.svg";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
 `;
 
 export const Main = styled.div`
@@ -22,6 +21,8 @@ export const Wrapper = styled.div`
   height: 64px;
   font-size: 16px;
   width: 100%;
+
+  max-width: 1440px;
 `;
 
 export const Section = styled.div`

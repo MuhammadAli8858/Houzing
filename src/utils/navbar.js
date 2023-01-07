@@ -1,11 +1,22 @@
+import React from "react";
 import useId from "../hooks/useid";
-import HomePage from "../pages/Home";
-import Properties from "../pages/Properties";
+import SingIn from "../pages/SingIn";
+
+const HomePage = React.lazy(() => import("../pages/Home"));
+const Properties = React.lazy(() => import("../pages/Properties"));
+const HouseItem = React.lazy(() => import("../pages/HouseItem"));
+
+// import HomePage from "../pages/Home";
+// import Properties from "../pages/Properties";
 
 export const navbar = [
   {
     id: useId,
-    element: <HomePage />,
+    element: (
+      <React.Suspense fallback={<React.Fragment>Loading...</React.Fragment>}>
+        <HomePage />
+      </React.Suspense>
+    ),
     title: "Home",
     path: "/home",
     private: false,
@@ -13,7 +24,11 @@ export const navbar = [
   },
   {
     id: useId,
-    element: <Properties />,
+    element: (
+      <React.Suspense fallback={<React.Fragment>Loading...</React.Fragment>}>
+        <Properties />
+      </React.Suspense>
+    ),
     title: "Properties",
     path: "/properties",
     private: false,
@@ -21,7 +36,19 @@ export const navbar = [
   },
   {
     id: useId,
-    element: <h1>Generic Sing In</h1>,
+    element: (
+      <React.Suspense fallback={<React.Fragment>Loading...</React.Fragment>}>
+        <HouseItem />
+      </React.Suspense>
+    ),
+    title: "Single House",
+    path: "/properties/:id",
+    private: false,
+    hidden: true,
+  },
+  {
+    id: useId,
+    element: <SingIn />,
     title: "Sing In",
     path: "/singin",
     private: false,
