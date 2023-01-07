@@ -41,11 +41,12 @@ export const Recommended = () => {
         </h1>
       </Content>
       <Slider {...settings}>
-        {data.map((value) => {
+        {data.map((value, index) => {
           return (
             <HouseCard
+              key={index}
               gap={10}
-              onClick={() => navigate(`/properties?category_id=${value?.id}`)}
+              onClick={() => navigate(`/properties/${value?.id}`)}
               data={value}
             />
           );

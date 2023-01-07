@@ -44,8 +44,9 @@ export const Recommended = () => {
         {data.map((value) => {
           return (
             <HouseCard
+              key={value.id}
               gap={10}
-              onClick={() => navigate(`/properties?category_id=${value?.id}`)}
+              onClick={() => navigate(`/properties/${value?.id}`)}
               data={value}
             />
           );

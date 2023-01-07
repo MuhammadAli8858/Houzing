@@ -3,8 +3,8 @@ import { ReactComponent as bed } from "../../assets/icons/bed.svg";
 import { ReactComponent as bath } from "../../assets/icons/bath.svg";
 import { ReactComponent as garage } from "../../assets/icons/car.svg";
 import { ReactComponent as ruler } from "../../assets/icons/ruler.svg";
-import { ReactComponent as love } from "../../assets/icons/love.svg";
 import { ReactComponent as resize } from "../../assets/icons/resize.svg";
+import { ReactComponent as love } from "../../assets/icons/love.svg";
 
 export const Global = styled.div`
   display: flex;

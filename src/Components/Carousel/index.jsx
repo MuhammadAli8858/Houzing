@@ -8,7 +8,7 @@ const GenCarousel = () => {
   const slider = useRef();
 
   const onChange = (currentSlide) => {
-    console.log(currentSlide);
+    // console.log(currentSlide);
   };
 
   const onMove = ({
@@ -31,8 +31,8 @@ const GenCarousel = () => {
         <Content.Desc>112 Glenwood Ave Hyde Park, Boston, MA</Content.Desc>
         <Content.Price>$5,250 / month</Content.Price>
       </Content>
-      <Arrow data-name="right" name="right" onClick={onMove} left />
-      <Arrow onClick={onMove} data-name="left" />
+      <Arrow data-name="right" name="right" onClick={onMove} left={"true"} />
+      <Arrow data-name="left" onClick={onMove} />
     </Container>
   );
 };

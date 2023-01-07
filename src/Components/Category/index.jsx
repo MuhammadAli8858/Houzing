@@ -30,7 +30,7 @@ export const GenCarousel = () => {
         setData(res?.data || []);
       });
   }, []);
-  console.log(data);
+  // console.log(data);
 
   return (
     <Container>
@@ -44,6 +44,7 @@ export const GenCarousel = () => {
         {data.map((value) => {
           return (
             <CategoryCard
+              key={value.id}
               onClick={() => navigate(`/properties?category_id=${value?.id}`)}
               data={value}
             />

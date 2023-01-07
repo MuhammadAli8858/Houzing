@@ -10,7 +10,7 @@ import {
 } from "./style.js";
 import noimg from "../../assets/img/noimg1.jpg";
 
-const HouseCard = ({ data = {}, gap }) => {
+const HouseCard = ({ data = {}, gap, onClick }) => {
   const {
     attachments,
     salePrice,
@@ -23,7 +23,7 @@ const HouseCard = ({ data = {}, gap }) => {
     category,
   } = data;
   return (
-    <Global>
+    <Global onClick={onClick}>
       <Container gap={gap}>
         <Img src={(attachments && attachments[0]?.imgPath) || noimg} />
         <Content>
