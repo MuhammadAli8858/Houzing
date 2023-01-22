@@ -14,6 +14,7 @@ export const Input = forwardRef(
       width,
       prefix,
       height,
+      style,
     },
     ref
   ) => {
@@ -21,6 +22,7 @@ export const Input = forwardRef(
       <Wrapper>
         <Icon>{icon}</Icon>
         <Container
+          style={style}
           ref={ref}
           prefix={prefix}
           icon={icon}

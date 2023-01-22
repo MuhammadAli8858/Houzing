@@ -1,7 +1,9 @@
 import { Checkbox } from "antd";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Input, Button } from "../Generic";
+import { Button } from "../Generic";
+import { Input } from "./style";
+
 import { Recommended } from "../Recent";
 import nouser from "../../assets/img/nouser.png";
 import airConditioner from "../../assets/icons/air-conditioner.png";
@@ -112,13 +114,6 @@ export const HouseItem = () => {
               </Download>
             </Description.Title>
           </Documents>
-          <hr
-            style={{
-              background: "#E6E9EC",
-              marginTop: "48px",
-              marginBottom: "48px",
-            }}
-          />
         </Container>
         <Container className="user" flex={1}>
           <Section style={{ justifyContent: "flex-start" }}>
@@ -131,13 +126,23 @@ export const HouseItem = () => {
           <Input placeholder="Name" />
           <Input placeholder="Phone" />
           <Input placeholder="Email" />
-          <Input placeholder="Message" />
+          <Property className="subTitle">
+            Message
+            <Input placeholder="Hello, I am interested in ..." />
+          </Property>
           <Checkbox>By submitting this form I agree to Terms of Use</Checkbox>
           <Button width={"%"}>Send request</Button>
         </Container>
       </Wrapper>
       <Wrapper>
         <Content.Title mt={48} mb>
+          <hr
+            style={{
+              background: "#E6E9EC",
+              marginTop: "48px",
+              marginBottom: "48px",
+            }}
+          />
           Location
           <Section>
             <Section mt={24} mb={24}>

@@ -55,6 +55,8 @@ export const Wrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  margin-top: ${({ mt }) => `${mt}px`};
+  margin-bottom: ${({ mb }) => `${mb}px`};
   width: ${({ width }) => (width ? `${width}px` : "100%")};
 `;
 

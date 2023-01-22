@@ -5,7 +5,7 @@ import { Button, Input } from "../Generic";
 import useRequest from "../../hooks/useRequest";
 import { message } from "antd";
 
-export const Singin = () => {
+export const Singup = () => {
   const request = useRequest();
   const [body, setBody] = useState({});
   const navigate = useNavigate();
@@ -23,23 +23,27 @@ export const Singin = () => {
 
   const onSubmit = () => {
     request({
-      url: `/public/auth/login`,
+      url: `/public/auth/register`,
       method: "POST",
       body,
       me: true,
     }).then((res) => {
-      if (res?.authenticationToken) {
-        navigate("/home");
-        localStorage.setItem("token", res?.authenticationToken);
-      }
+      navigate("/singin");
       info();
     });
   };
   return (
     <Content>
-      <div className="subTitle">Sing In </div>
+      <div className="subTitle">Sing Up </div>
       <Input onChange={onChange} placeholder="email" type="email" />
+      <Input onChange={onChange} placeholder="firstname" type="text" />
+      <Input onChange={onChange} placeholder="lastname" type="text" />
       <Input onChange={onChange} placeholder="password" type="password" />
+      <Input
+        onChange={onChange}
+        placeholder="Re-enter password"
+        type="password"
+      />
       <Button width="%" onClick={onSubmit}>
         Login
       </Button>
@@ -47,4 +51,4 @@ export const Singin = () => {
   );
 };
 
-export default Singin;
+export default Singup;

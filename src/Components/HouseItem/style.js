@@ -31,14 +31,34 @@ export const Container = styled.div`
   flex: ${({ flex }) => flex};
   gap: ${({ gap }) => `${gap}px`};
   ~ .user {
-    /* border: 1px solid red; */
-    /* background: red; */
     background: #ffffff;
     border: 1px solid #e6e9ec;
     border-radius: 3px;
     margin-left: 20px;
     padding: 24px;
     gap: 24px;
+  }
+`;
+
+export const Input = styled.input`
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid #e6e9ec;
+  padding: 5px;
+  color: #000000;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  width: 200px;
+  font-weight: 500;
+  font-style: normal;
+  /* font-family: "Silkscreen", cursive; */
+  font-family: "Montserrat";
+  :focus {
+    border-bottom: 1px solid #000000;
+  }
+  :active {
+    opacity: 0.7;
   }
 `;
 
@@ -92,7 +112,6 @@ Content.Title = styled.div`
 export const Details = styled.div`
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
   padding-top: 16px;
   margin-top: 32px 0;
 `;
