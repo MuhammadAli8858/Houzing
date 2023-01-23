@@ -33,7 +33,7 @@ export const AddNewHouse = () => {
     id &&
       request({ url: `/houses/id/${id}`, token: true }).then((res) => {
         setImgs(res?.data?.attachments);
-        setInitial({ ...initial, ...res?.data });
+        setInitial({ ...res?.data });
       });
   }, []);
 
@@ -51,13 +51,14 @@ export const AddNewHouse = () => {
   const formik = useFormik({
     initialValues: initial,
     enableReinitialize: true,
-    onSubmit: (value) => {
+
+    onSubmit: async (values) => {
       request({
         url: id ? `/houses/${id}` : `/houses`,
         method: id ? "PUT" : "POST",
         token: true,
         body: {
-          ...value,
+          ...values,
           categoryId: 1,
           name: "wabbrain",
           attachments: imgs,
@@ -67,6 +68,21 @@ export const AddNewHouse = () => {
       });
     },
   });
+  // const { initialValues } = props;
+
+  // try {
+  //   const valuesToSend = values.facilities
+  //     .filter((facility, i) => {
+  //       return facility.enabled !== initialValues[i].enabled;
+  //     })
+  //     .map((facility) => ({
+  //       kye: facility.facilityName,
+  //       value: facility.enabled,
+  //     }));
+  //   console.log(valuesToSend, "valuesToSend");
+  // } catch (err) {
+  //   console.log(err, "err");
+  // }
 
   const addImg = () => {
     if (!(imgs.length >= 4) && img) {
@@ -115,49 +131,49 @@ export const AddNewHouse = () => {
               <Input
                 type="number"
                 name="houseDetails.area"
-                value={formik.values.houseDetails.area}
+                value={formik.values.houseDetails?.area}
                 onChange={formik.handleChange}
                 placeholder="Area"
               />
               <Input
                 type="number"
                 name="houseDetails.bath"
-                value={formik.values.houseDetails.bath}
+                value={formik.values.houseDetails?.bath}
                 onChange={formik.handleChange}
                 placeholder="Bath"
               />
               <Input
                 type="number"
                 name="houseDetails.beds"
-                value={formik.values.houseDetails.beds}
+                value={formik.values.houseDetails?.beds}
                 onChange={formik.handleChange}
                 placeholder="Beds"
               />
               <Input
                 type="number"
                 name="houseDetails.garage"
-                value={formik.values.houseDetails.garage}
+                value={formik.values.houseDetails?.garage}
                 onChange={formik.handleChange}
                 placeholder="Garage"
               />
               <Input
                 type="number"
                 name="houseDetails.yearBuilt"
-                value={formik.values.houseDetails.yearBuilt}
+                value={formik.values.houseDetails?.yearBuilt}
                 onChange={formik.handleChange}
                 placeholder="Year Built"
               />
               <Input
                 type="number"
                 name="houseDetails.room"
-                value={formik.values.houseDetails.room}
+                value={formik.values.houseDetails?.room}
                 onChange={formik.handleChange}
                 placeholder="Rooms"
               />
 
               <SelectAnt
                 defaultValue={"Select Category"}
-                value={formik.values.category}
+                value={formik.values?.category}
                 onChange={formik.handleChange}
               >
                 <SelectAnt.Option value={""}>Select Category</SelectAnt.Option>
@@ -179,27 +195,27 @@ export const AddNewHouse = () => {
               <Input
                 onChange={formik.handleChange}
                 name="name"
-                value={formik.values.name}
+                value={formik.values?.name}
                 placeholder="Name"
               />
               <Input
                 onChange={formik.handleChange}
                 name="zipCode"
-                value={formik.values.zipCode}
+                value={formik.values?.zipCode}
                 placeholder="Zip Code"
               />
               <Input
                 type="number"
                 onChange={formik.handleChange}
                 name="price"
-                value={formik.values.price}
+                value={formik.values?.price}
                 placeholder="Price"
               />
               <Input
                 type="number"
                 onChange={formik.handleChange}
                 name="salePrice"
-                value={formik.values.salePrice}
+                value={formik.values?.salePrice}
                 placeholder="Sale price"
               />
             </Section>
@@ -241,13 +257,13 @@ export const AddNewHouse = () => {
               <Input
                 onChange={formik.handleChange}
                 name="regions"
-                value={formik.values.regions}
+                value={formik.values?.regions}
                 placeholder="Regions"
               />
               <Input
                 onChange={formik.handleChange}
                 name="friendlyAddress"
-                value={formik.values.friendlyAddress}
+                value={formik.values?.friendlyAddress}
                 placeholder="Friendly address"
               />
             </Section>
@@ -405,7 +421,7 @@ export const AddNewHouse = () => {
               />
             </Section>
             <Section style={{ justifyContent: " end" }}>
-              <Button>{id ? "Update" : "Save"}</Button>
+              <Button type={"submit"}>{id ? "Update" : "Save"}</Button>
             </Section>
           </MenuWrapper>
         </Container>
