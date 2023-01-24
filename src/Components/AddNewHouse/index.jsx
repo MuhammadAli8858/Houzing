@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "../Properties/style";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useRequest from "../../hooks/useRequest";
 import { Icons, MenuWrapper, Section, SelectAnt, Wrapper } from "./style";
 import { Button, Input } from "../Generic";
@@ -68,6 +68,7 @@ export const AddNewHouse = () => {
       });
     },
   });
+
   // const { initialValues } = props;
 
   // try {
@@ -79,9 +80,7 @@ export const AddNewHouse = () => {
   //       kye: facility.facilityName,
   //       value: facility.enabled,
   //     }));
-  //   console.log(valuesToSend, "valuesToSend");
   // } catch (err) {
-  //   console.log(err, "err");
   // }
 
   const addImg = () => {
@@ -170,7 +169,6 @@ export const AddNewHouse = () => {
                 onChange={formik.handleChange}
                 placeholder="Rooms"
               />
-
               <SelectAnt
                 defaultValue={"Select Category"}
                 value={formik.values?.category}
@@ -225,7 +223,11 @@ export const AddNewHouse = () => {
                 onChange={({ target: { value } }) => setImg(value)}
                 placeholder="Add Image URL"
               />
-              <Button onClick={addImg} disabled={imgs.length >= 4}>
+              <Button
+                onClick={addImg}
+                type={"button"}
+                disabled={imgs.length >= 4}
+              >
                 Add Image URL
               </Button>
             </Section>
@@ -421,7 +423,7 @@ export const AddNewHouse = () => {
               />
             </Section>
             <Section style={{ justifyContent: " end" }}>
-              <Button type={"submit"}>{id ? "Update" : "Save"}</Button>
+              <Button>{id ? "Update" : "Save"}</Button>
             </Section>
           </MenuWrapper>
         </Container>

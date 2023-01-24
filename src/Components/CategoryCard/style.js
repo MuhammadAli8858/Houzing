@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import { ReactComponent as house } from "../../assets/icons/house.svg";
+import { ReactComponent as apartment } from "../../assets/icons/apartment.svg";
+import { ReactComponent as office } from "../../assets/icons/office.svg";
+import { ReactComponent as villa } from "../../assets/icons/villa.svg";
 
 export const Container = styled.div`
   border-radius: 3px;
@@ -49,10 +53,12 @@ export const Blur = styled.div`
   right: 0;
   left: 0;
 
-  /* Category shadow */
-  /* background: rgba(0, 0, 0, 0.7); */
-
   border-radius: 3px;
 `;
 
 export const Icons = styled.div``;
+
+Icons.House = styled(house)``;
+Icons.Apartment = styled(apartment)``;
+Icons.Office = styled(office)``;
+Icons.Villa = styled(villa)``;

@@ -26,10 +26,7 @@ export const Filter = () => {
   const minPriceRef = useRef();
   const maxPriceRef = useRef();
 
-  // console.log(Number(query.get("category_id")), "id");
-
   const onChange = ({ target: { name, value } }) => {
-    // console.log(name, value);
     navigate(`${location?.pathname}${uzeReplace(name, value)}`);
   };
 
@@ -137,7 +134,6 @@ export const Filter = () => {
       </Section>
     </MenuWrapper>
   );
-  // console.log(useReplace("address", "toshkent"));
 
   return (
     <Container>

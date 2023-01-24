@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { Container } from "../Properties/style";
 import { useLocation, useNavigate } from "react-router-dom";
 import useRequest from "../../hooks/useRequest";
@@ -92,9 +91,17 @@ const MyProfile = () => {
         return (
           <User>
             <Icons.Edit
-              onClick={() => navigate(`/myprofile/edithouse/${data?.id}`)}
+              onClick={(event) => {
+                event.stopPropagation();
+                navigate(`/myprofile/edithouse/${data?.id}`);
+              }}
             />
-            <Icons.Delete onClick={() => onDelete(data?.id)} />
+            <Icons.Delete
+              onClick={(event) => {
+                event.stopPropagation();
+                onDelete(data?.id);
+              }}
+            />
           </User>
         );
       },
@@ -114,7 +121,17 @@ const MyProfile = () => {
         </Container>
       </User>
       <Container>
-        <AntTable dataSource={data?.data} columns={columns} />
+        <AntTable
+          onRow={(record, rowIndex) => {
+            return {
+              onClick: () => {
+                navigate(`/properties/${record?.id}`);
+              },
+            };
+          }}
+          dataSource={data?.data}
+          columns={columns}
+        />
       </Container>
     </Wrapper>
   );

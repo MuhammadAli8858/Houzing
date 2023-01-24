@@ -184,7 +184,6 @@ export const HouseItem = () => {
                 <Content flex>
                   <Property className="subTitle">Country:</Property>
                   <Details.Title>
-                    {" "}
                     {data?.country || "United States"}
                   </Details.Title>
                 </Content>
@@ -369,7 +368,6 @@ export const HouseItem = () => {
           </Container>
         </Section>
         <Section>
-          {" "}
           <Container gap={28}>
             <Content flex>
               <Img src={airConditioner}>
