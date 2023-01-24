@@ -35,14 +35,14 @@ export const AddNewHouse = () => {
         setImgs(res?.data?.attachments);
         setInitial({ ...res?.data });
       });
-  }, []);
+  }, [id, request]);
 
   //category
   useEffect(() => {
     request({ url: `/categories/list` }).then((res) =>
       setCategory(res?.data || [])
     );
-  }, []);
+  }, [request]);
 
   // useEffect(() => {
   //   request({ url: `/houses/me` }).then((res) => setData(res?.data || []));
