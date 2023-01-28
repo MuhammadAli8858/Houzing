@@ -2,13 +2,12 @@ import { Checkbox } from "antd";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Button } from "../Generic";
-import { Input } from "./style";
+import noimg from "../../assets/img/noimg1.jpg";
 
 import { Recommended } from "../Recent";
 import nouser from "../../assets/img/nouser.png";
 import airConditioner from "../../assets/icons/air-conditioner.png";
 
-// import useRequest from "../../hooks/useRequest";
 import {
   Container,
   Content,
@@ -24,14 +23,17 @@ import {
   Section,
   User,
   Wrapper,
+  Blur,
+  ImageContainer,
+  ImgContainer,
+  Input,
 } from "./style";
 import Yandex from "../Generic/Yandex";
-// const { REACT_APP_BASE_URL: url } = process.env;
+import Modal from "../ModalImg";
 
 export const HouseItem = () => {
   const [data, setData] = useState({});
   const params = useParams();
-  // const request = useRequest();
 
   useEffect(() => {
     // request({ url: `/houses/list/${params?.id}` }).then((res) =>
@@ -45,8 +47,55 @@ export const HouseItem = () => {
       });
   }, [params?.id]);
 
+  console.log(data?.attachments, "daaata");
+
+  // const [firstImg] = data?.attachments;
+
+  const [modalActive, setModalActive] = useState(true);
+
   return (
     <React.Fragment>
+      <ImageContainer>
+        <ImageContainer.Main
+          src={(data?.attachments && data?.attachments[0].imgPath) || noimg}
+          alt="test"
+        />
+        <ImgContainer>
+          {data?.attachments?.slice(1, 5).map((value, index) => {
+            return data?.attachments?.length > 5 && index === 3 ? (
+              <Blur.Container>
+                <ImageContainer.Subimg
+                  key={value?.id}
+                  src={value?.imgPath}
+                  alt="test"
+                />
+
+                <Blur>
+                  <div>
+                    <main>
+                      <button className="open-btn">MOdal</button>
+                      <p>mlimmlkmvsdnvjnsdjlnvsljdnvjlsndklvnskdnvklsdnvkls</p>
+                      <p>mlimmlkmvsdnvjnsdjlnvsljdnvjlsndklvnskdnvklsdnvkls</p>
+                      <p>mlimmlkmvsdnvjnsdjlnvsljdnvjlsndklvnskdnvklsdnvkls</p>
+                      <p>mlimmlkmvsdnvjnsdjlnvsljdnvjlsndklvnskdnvklsdnvkls</p>
+                      <p>mlimmlkmvsdnvjnsdjlnvsljdnvjlsndklvnskdnvklsdnvkls</p>
+                    </main>
+                    <Modal active={modalActive} setActive={setModalActive} />
+                  </div>
+                  +{data?.attachments?.length - 5}
+                  {<a href="Img">Modal</a>}
+                </Blur>
+              </Blur.Container>
+            ) : (
+              <ImageContainer.Subimg
+                key={value?.id}
+                src={value?.imgPath}
+                alt="test"
+              />
+            );
+          })}
+        </ImgContainer>
+      </ImageContainer>
       <Wrapper>
         <Container flex={3}>
           <Section>
