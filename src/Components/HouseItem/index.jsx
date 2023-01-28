@@ -29,7 +29,7 @@ import {
   Input,
 } from "./style";
 import Yandex from "../Generic/Yandex";
-import Modal from "../ModalImg";
+import { Modal } from "antd";
 
 export const HouseItem = () => {
   const [data, setData] = useState({});
@@ -49,9 +49,7 @@ export const HouseItem = () => {
 
   console.log(data?.attachments, "daaata");
 
-  // const [firstImg] = data?.attachments;
-
-  const [modalActive, setModalActive] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <React.Fragment>
@@ -69,28 +67,45 @@ export const HouseItem = () => {
                   src={value?.imgPath}
                   alt="test"
                 />
+                <Modal
+                  title="House pictures"
+                  centered
+                  open={open}
+                  onOk={() => setOpen(false)}
+                  onCancel={() => setOpen(false)}
+                  width={1000}
+                >
+                  <ImageContainer.Modal>
+                    {data?.attachments?.map((value, index) => {
+                      return data?.attachments?.length > 5 && index === 3 ? (
+                        <ImageContainer.Img
+                          src={
+                            (data?.attachments &&
+                              data?.attachments[0].imgPath) ||
+                            noimg
+                          }
+                          alt="test"
+                        />
+                      ) : (
+                        <ImageContainer.Subimg
+                          key={value?.id}
+                          src={value?.imgPath}
+                          alt={noimg}
+                        />
+                      );
+                    })}
+                  </ImageContainer.Modal>
+                </Modal>
 
-                <Blur>
-                  <div>
-                    <main>
-                      <button className="open-btn">MOdal</button>
-                      <p>mlimmlkmvsdnvjnsdjlnvsljdnvjlsndklvnskdnvklsdnvkls</p>
-                      <p>mlimmlkmvsdnvjnsdjlnvsljdnvjlsndklvnskdnvklsdnvkls</p>
-                      <p>mlimmlkmvsdnvjnsdjlnvsljdnvjlsndklvnskdnvklsdnvkls</p>
-                      <p>mlimmlkmvsdnvjnsdjlnvsljdnvjlsndklvnskdnvklsdnvkls</p>
-                      <p>mlimmlkmvsdnvjnsdjlnvsljdnvjlsndklvnskdnvklsdnvkls</p>
-                    </main>
-                    <Modal active={modalActive} setActive={setModalActive} />
-                  </div>
+                <Blur type="primary" onClick={() => setOpen(true)}>
                   +{data?.attachments?.length - 5}
-                  {<a href="Img">Modal</a>}
                 </Blur>
               </Blur.Container>
             ) : (
               <ImageContainer.Subimg
                 key={value?.id}
                 src={value?.imgPath}
-                alt="test"
+                alt={noimg}
               />
             );
           })}
