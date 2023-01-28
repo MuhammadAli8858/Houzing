@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { Container } from "../Properties/style";
 import { useNavigate, useParams } from "react-router-dom";
@@ -84,7 +85,7 @@ export const AddNewHouse = () => {
   // }
 
   const addImg = () => {
-    if (!(imgs.length >= 4) && img) {
+    if (!(imgs.length >= 25) && img) {
       setImgs([
         ...imgs,
         { imgPath: img, id: `${img.length * Math.random()}${img}` },
@@ -226,7 +227,7 @@ export const AddNewHouse = () => {
               <Button
                 onClick={addImg}
                 type={"button"}
-                disabled={imgs.length >= 4}
+                disabled={imgs.length >= 25}
               >
                 Add Image URL
               </Button>
