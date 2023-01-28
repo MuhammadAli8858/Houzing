@@ -272,6 +272,9 @@ export const ImageContainer = styled.div`
   margin-bottom: 24px;
   margin-top: 24px;
 `;
+ImageContainer.Modal = styled.div``;
+
+ImageContainer.Img = styled.div``;
 
 ImageContainer.Main = styled.img`
   width: 100%;
@@ -309,6 +312,10 @@ export const Blur = styled.div`
   left: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  :active {
+    transform: scale(0.99);
+  }
 `;
 
 Blur.Container = styled.div`
