@@ -18,7 +18,7 @@ export const Singup = () => {
   };
 
   const info = () => {
-    message.info("Добро пожаловать ");
+    message.info(" Добро пожаловать ");
   };
 
   const onSubmit = () => {
