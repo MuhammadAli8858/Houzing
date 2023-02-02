@@ -10,12 +10,12 @@ export const Register = () => {
         defaultActiveKey="1"
         items={[
           {
-            label: `Sing in`,
+            label: "Sing in",
             key: "1",
             children: <Singin />,
           },
           {
-            label: `Sing up`,
+            label: "Sing up",
             key: "2",
             children: <Singup />,
           },
