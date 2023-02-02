@@ -1,7 +1,7 @@
 import React from "react";
 import { AndTabs, Container } from "./style";
-import Singin from "../Singin";
-import Singup from "../Singup";
+import Singin from "../Singin/index.jsx";
+import Singup from "../Singup/index.jsx";
 
 export const Register = () => {
   return (
