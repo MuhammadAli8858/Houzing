@@ -4,7 +4,6 @@ import { ReactComponent as edit } from "../../assets/icons/edit.svg";
 import { ReactComponent as del } from "../../assets/icons/delete.svg";
 
 export const Container = styled.div`
-  /* padding: var(--padding); */
   width: 100%;
   background: #ffffff;
   border: 1px solid #e6e9ec;

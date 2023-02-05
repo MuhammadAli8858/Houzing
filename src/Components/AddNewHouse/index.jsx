@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { Container } from "../Properties/style";
 import { useNavigate, useParams } from "react-router-dom";
@@ -69,20 +68,6 @@ export const AddNewHouse = () => {
       });
     },
   });
-
-  // const { initialValues } = props;
-
-  // try {
-  //   const valuesToSend = values.facilities
-  //     .filter((facility, i) => {
-  //       return facility.enabled !== initialValues[i].enabled;
-  //     })
-  //     .map((facility) => ({
-  //       kye: facility.facilityName,
-  //       value: facility.enabled,
-  //     }));
-  // } catch (err) {
-  // }
 
   const addImg = () => {
     if (!(imgs.length >= 25) && img) {

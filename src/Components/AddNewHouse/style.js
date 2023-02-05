@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
   max-width: 1440px;
   width: 100%;
   margin: auto;
-  /* margin-top: 50px; */
 `;
 
 export const MenuWrapper = styled.div`
@@ -20,7 +19,6 @@ export const Section = styled.div`
   flex-direction: ${({ flex }) => (flex ? "column" : "row")};
   justify-content: ${({ gap }) => (gap ? "space-between" : "start")};
   gap: 20px;
-  /* width: 100%; */
   margin-bottom: 20px;
 `;
 

@@ -15,7 +15,6 @@ import {
   Profile,
 } from "./style";
 import { Dropdown } from "antd";
-// import placements from "rc-tooltip/lib/placements";
 
 export const Navbar = () => {
   let token = localStorage.getItem("token");

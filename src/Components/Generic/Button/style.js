@@ -50,9 +50,7 @@ export const Container = styled.button`
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 
   ${getType};
-  /* :active {
-    opacity: 0.7;
-  } */
+
   :active {
     transform: scale(0.95);
   }

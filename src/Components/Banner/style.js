@@ -45,7 +45,6 @@ Content.Title = styled.h1`
   font-weight: 600;
   font-size: 28px;
   line-height: 36px;
-  /* or 129% */
 
   text-align: center;
   letter-spacing: -0.02em;

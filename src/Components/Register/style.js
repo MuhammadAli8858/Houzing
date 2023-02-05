@@ -9,7 +9,6 @@ export const Container = styled.div`
   margin: auto;
   width: 100%;
   background: #e6e9ec;
-  /* background: whitesmoke; */
 `;
 
 export const AndTabs = styled(Tabs)`

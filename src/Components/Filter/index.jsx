@@ -21,7 +21,6 @@ export const Filter = () => {
   const zipRef = useRef();
 
   const roomsRef = useRef();
-  // const sortRef = useRef();
 
   const minPriceRef = useRef();
   const maxPriceRef = useRef();

@@ -7,20 +7,9 @@ import { useQuery } from "react-query";
 import { message } from "antd";
 
 const MyProfile = () => {
-  // const [data, setData] = useState([]);
   const { search } = useLocation();
   const navigate = useNavigate();
   const request = useRequest();
-
-  // useEffect(() => {
-  //   request({ url: `/houses/me`, token: true }).then(
-  //     (res) => setData(res?.data || [])
-
-  //     // request({ url: `/houses/list${search}` }).then((res) =>
-  //     //   setData(res?.data || [])
-  //   );
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [search]);
 
   const { data, refetch } = useQuery([search], () => {
     return request({ url: `/houses/me`, token: true });

@@ -52,7 +52,6 @@ export const Input = styled.input`
   width: 200px;
   font-weight: 500;
   font-style: normal;
-  /* font-family: "Silkscreen", cursive; */
   font-family: "Montserrat";
   :focus {
     border-bottom: 1px solid #000000;
@@ -302,8 +301,6 @@ export const Blur = styled.div`
   font-weight: 600;
   font-size: 36px;
   line-height: 44px;
-  /* identical to box height, or 122% */
-
   letter-spacing: -0.02em;
 
   width: 100%;

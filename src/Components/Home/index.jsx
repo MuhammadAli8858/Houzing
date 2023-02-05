@@ -2,7 +2,7 @@ import React from "react";
 import Carousel from "../Carousel";
 import Recommended from "../Recommended";
 import Category from "../Category";
-import Why from "../Why";
+import WhyChoolUs from "../WhyChoolUs";
 import Recent from "../Recent";
 import Banner from "../Banner";
 import { Container } from "./style";
@@ -12,7 +12,7 @@ export const Home = () => {
     <Container>
       <Carousel />
       <Recommended />
-      <Why />
+      <WhyChoolUs />
       <Category />
       <Banner />
       <Recent />

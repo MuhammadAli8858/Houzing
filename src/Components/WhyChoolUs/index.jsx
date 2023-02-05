@@ -1,6 +1,6 @@
 import { Container, Content, Wrapper, Icons } from "./style";
 
-export const Why = () => {
+export const WhyChoolUs = () => {
   return (
     <Container>
       <Content>
@@ -47,4 +47,4 @@ export const Why = () => {
   );
 };
 
-export default Why;
+export default WhyChoolUs;

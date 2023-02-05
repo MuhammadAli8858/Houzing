@@ -10,10 +10,8 @@ export const Container = styled.div`
 
   display: flex;
   position: relative;
-  /* align-items: center; */
   justify-content: space-around;
 
-  /* margin: auto; */
   width: 100%;
   margin-top: 96px;
   padding: 48px 0;
@@ -53,8 +51,6 @@ Content.Item = styled.div`
 
 export const Icons = styled.div``;
 Icons.Email = styled(email)`
-  /* display: flex; */
-  /* margin-right: 21px; */
   right: 21px;
   width: 50px;
   & path {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Content, Icons } from "./style";
+import { Container, Content } from "./style";
 import CategoryCard from "../CategoryCard";
 import Slider from "react-slick";
 import { useNavigate } from "react-router-dom";
@@ -39,7 +39,6 @@ export const GenCarousel = () => {
           Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
         </h1>
       </Content>
-      {/* <Icons.House />; */}
       <Slider {...settings}>
         {data.map((value) => {
           return (
