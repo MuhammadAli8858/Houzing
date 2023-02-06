@@ -1,6 +1,6 @@
 import React from "react";
 import { AndTabs, Container } from "./style";
-import SingIn from "../Singin/index.jsx";
+import Singin from "../../Components/SingIn/index.jsx";
 import Singup from "../Singup/index.jsx";
 
 export const Register = () => {
@@ -11,8 +11,9 @@ export const Register = () => {
         items={[
           {
             label: "Sing in",
+
             key: "1",
-            children: <SingIn />,
+            children: <Singin />,
           },
           {
             label: "Sing up",

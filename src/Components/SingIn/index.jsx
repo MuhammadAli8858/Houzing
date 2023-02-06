@@ -5,7 +5,7 @@ import { Button, Input } from "../Generic";
 import useRequest from "../../hooks/useRequest";
 import { message } from "antd";
 
-const Singin = () => {
+export const Singin = () => {
   const request = useRequest();
   const [body, setBody] = useState({});
   const navigate = useNavigate();

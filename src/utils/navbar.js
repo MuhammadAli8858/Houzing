@@ -1,6 +1,6 @@
 import React from "react";
 import useId from "../hooks/useid";
-import SingIn from "../pages/Register";
+import Register from "../pages/Register";
 import Favourite from "../pages/Favourite";
 import MyProfile from "../pages/MyProfile";
 import AddNewHouse from "../pages/AddNewHouse";
@@ -48,7 +48,7 @@ export const navbar = [
   },
   {
     id: useId,
-    element: <SingIn />,
+    element: <Register />,
     title: "Sing In",
     path: "/singin",
     private: false,
